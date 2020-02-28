@@ -1,18 +1,31 @@
 export default function validEmail() {
-    $('#formEmail').on('input focus blur', function() {
+    $('.js-email-valid').on('blur', function() {
 
         if (this.validity.valueMissing) {
-            $(this).css('border', '2px solid red').css('color', 'red');
-            $('.form-error').removeClass('hidden');
-        }
-        
-        if (this.validity.patternMismatch) {
-            $(this).css('border', '2px solid red').css('color', 'red');
-            $('.form-error').removeClass('hidden');
-        } else {$(this).css('border', '2px solid green').css('color', 'black');
-        $('.form-error').addClass('hidden');
-    }
+            
+            if ($(this).hasClass('form__email--success')) {$(this).removeClass('form__email--success')};
 
+            $(this).addClass('form__email--error');
+            $('.form-error').removeClass('hidden');
+
+        } else {
+
+            if (this.validity.patternMismatch) {
+
+                if ($(this).hasClass('form__email--success')) {$(this).removeClass('form__email--success')};
+
+                $(this).addClass('form__email--error');
+                $('.form-error').removeClass('hidden');
+
+            } else {
+
+                if ($(this).hasClass('form__email--error')) {$(this).removeClass('form__email--error')};
+
+                $(this).addClass('form__email--success');
+                $('.form-error').addClass('hidden');
+
+            }
+        }
     });
     
 }

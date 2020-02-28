@@ -23,7 +23,7 @@
             <a href="mailto:shop@reproduct.io" itemprop="email">shop@reproduct.io</a>
         </div>
     </div>
-    <div class="promo__slider slider-top" itemscope itemtype="https://schema.org/Offer">
+    <div class="promo__slider js-slider-top" itemscope itemtype="https://schema.org/Offer">
         <div class="slider-top__item">
             <img class="slider-top__image" itemprop="image" src="assets/images/slider-top/01.jpg" alt="Явление Христа народу, Александр Иванов" width="700" height="467" data-image="assets/images/slider-top/01min.jpg">
             <div class="slider-top__description description">
@@ -74,7 +74,7 @@
             <p class="popular__subtitle main-subtitle">
                 Нестареющая классика и бестселлеры
             </p>
-            <div class="slider-popular">
+            <div class="popular__slider js-slider-popular">
             <div class="slider-popular__item" itemscope itemtype="https://schema.org/Offer">
                 <img class="slider-popular__image" itemprop="image" src="assets/images/slider-popular/01.jpg" alt="Девушка с жемчужной серёжкой, Ян Вермеер" data-shadow="#000767">
                 <div class="slider-popular__description description">
@@ -153,8 +153,8 @@
                     Заполните форму справа или отправьте письмо на <a class ="contact-us__email" href="mailto:shop@reproduct.io">shop@reproduct.io</a>
                 </p>
                 <p class="contact-us__copyright">Репродукцио, 2019</p>
-                <a href="#personal-data-popup" class="popup-content">Правила обработки персональных данных</a>
-                <div class="white-popup mfp-with-anim mfp-hide" id="personal-data-popup">
+                <a href="#personal-data-popup" class="popup-content js-popup-opener">Правила обработки персональных данных</a>
+                <div class="white-popup mfp-hide" id="personal-data-popup">
                     <h3 class="personal-data__title">Правила обработки персональных данных</h3>
                     <p>
                     Предоставляя свои персональные данные Пользователь даёт согласие на обработку, 
@@ -190,8 +190,8 @@
             </div>
             <div class="form">
             <form class="contact-us__form js-form" action="">
-                <input placeholder="Email" name="form" id="formEmail" pattern="^[A-Za-z0-9][A-Za-z0-9\.\-_]*[A-Za-z0-9]*@([A-Za-z0-9]+([A-Za-z0-9-]*[A-Za-z0-9]+)*\.)+[A-Za-z]*$" required>
-                <textarea autocomplete="off" placeholder="Сообщение" rows="8" id="form-message"></textarea>
+                <input placeholder="Email" name="formEmail" id="formEmail" class="js-email-valid" pattern="^[A-Za-z0-9][A-Za-z0-9\.\-_]*[A-Za-z0-9]*@([A-Za-z0-9]+([A-Za-z0-9-]*[A-Za-z0-9]+)*\.)+[A-Za-z]*$" required>
+                <textarea autocomplete="off" placeholder="Сообщение" name="formMessage" rows="8" id="form-message"></textarea>
                 <button type="submit" class="form__btn btn">Отправить сообщение</button>
             </form>
             <p class="form-error hidden">Введите почту в формате xxx@xxx.xxx</p>

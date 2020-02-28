@@ -35,6 +35,8 @@
     "Firefox ESR"
   ],
   "dependencies": {
+    "gulp-html-beautify": "^1.0.1",
+    "gulp-typograf": "^4.0.2",
     "jquery": "^3.4.1"
   }
 }

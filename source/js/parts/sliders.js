@@ -1,6 +1,6 @@
 function initSliderTop() {
 
-    $('.slider-top').slick({
+    $('.js-slider-top').slick({
         infinite: false,
         dots: true,
         vertical: true,
@@ -13,7 +13,7 @@ function initSliderTop() {
 }
 
 function initSliderPopular() {
-    $('.slider-popular').slick({
+    $('.js-slider-popular').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
@@ -25,9 +25,9 @@ function initSliderPopular() {
 
 function initShadowColor() {
     
-    let images = $('.slider-popular__image');
+    var images = $('.slider-popular__image');
     $.each(images, function () {
-        let shadowColor = $(this).attr('data-shadow');
+        var shadowColor = $(this).attr('data-shadow');
         $(this).css('color', shadowColor);
     })
    

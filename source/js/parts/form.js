@@ -10,7 +10,7 @@ export default function handleFormSubmit() {
         };
 
         const callbackSuccess = () => {
-            $('.contact-us__form').css('display', 'none');
+            $('.contact-us__form').addClass('contact-us__form--success');
             $('.form-success').removeClass('hidden');
         }
 

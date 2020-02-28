@@ -1,6 +1,6 @@
 export default function initPopups() {
 
-    $('.popup-content').magnificPopup({
+    $('.js-popup-opener').magnificPopup({
         type: 'inline'
     });
     

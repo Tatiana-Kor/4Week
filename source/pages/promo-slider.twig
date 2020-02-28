@@ -1,0 +1,31 @@
+ <div class="promo__slider js-slider-top" itemscope itemtype="https://schema.org/Offer">
+        
+    {% set promo__slider = [
+        { src: 'assets/images/slider-top/01.jpg', alt:'Явление Христа народу, Александр Иванов', 
+        srcmin: 'assets/images/slider-top/01min.jpg', name: 'Явление Христа народу, 1857', 
+        author: 'Александр Иванов', description: '140 x 750см, холст', price: '5 100' },
+        { src: 'assets/images/slider-top/02.jpg', alt:'Триумф Нептуна и Амфитриты, Никола Пуссен', 
+        srcmin: 'assets/images/slider-top/02min.jpg', name: 'Триумф Нептуна и Амфитриты, 1637', 
+        author: 'Никола Пуссен', description: '115 x 53см, холст', price: '3 100' }, 
+        { src: 'assets/images/slider-top/03.jpg', alt:'Шестикрылый Серафим, Михаил Врубель', 
+        srcmin: 'assets/images/slider-top/03min.jpg', name: 'Шестикрылый Серафим, 1904', 
+        author: 'Михаил Врубель', description: '131 x 155см, холст', price: '4 100' },
+    ] %}
+
+    {% for slide in promo__slider %}
+        <div class="slider-top__item">
+            <img class="slider-top__image" itemprop="image" src="{{slide.src}}" alt="{{slide.alt}}" width="700" height="467" data-image="{{slide.srcmin}}">
+            <div class="slider-top__description description">
+                <div class="slider-top__history-creation description__history-creation" itemscope itemtype="https://schema.org/CreativeWork">
+                    <span class="slider-top__name description__name" itemprop="name">{{slide.name}}</span>
+                    <span class="slider-top__author description__author" itemprop="author">{{slide.author}}</span>
+                </div>
+                <div class="slider-top__product description__product" itemscope itemtype="https://schema.org/Offer">
+                    <span class="slider-top__size description__size" itemprop="description">{{slide.description}}</span>
+                    <span class="slider-top__price description__price" itemprop="price">{{slide.price}} &#8381;</span>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+</div>

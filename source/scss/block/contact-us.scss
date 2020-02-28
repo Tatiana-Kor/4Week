@@ -20,6 +20,10 @@
     display: flex;
     flex-direction: column;
     width: 280px;
+
+    &--success {
+        display: none;
+    }
 }
 
 .contact-us__form > * {
@@ -31,11 +35,17 @@
 }
 
 .contact-us__form button {
-    background-color: rgb(34, 2, 216);
+    background-color: rgb(32, 6, 177);
     color:  $text-color-primary;
     width: 200px;
     align-self: flex-end;
     transition: all 1s;
+
+    &:hover {
+        background-color:rgb(35, 5, 204);
+        transform: scale(1.1) translateX(-10px);
+        transition: all 0.5s;
+    }
 
     &:active {
         transform: scale(0.8);
@@ -100,4 +110,14 @@
 
 .form-error.hidden {
     display: none;
+}
+
+.form__email--success {
+    border: 2px solid green;
+    color:black;
+}
+
+.form__email--error {
+    border: 2px solid red;
+    color: red;
 }

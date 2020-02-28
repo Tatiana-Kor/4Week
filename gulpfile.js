@@ -12,6 +12,9 @@ const imagemin = require("gulp-imagemin");
 const babel = require("gulp-babel");
 const webpack = require("webpack-stream");
 const ghPages = require("gulp-gh-pages");
+const twig = require('gulp-twig');
+const htmlbeautify = require('gulp-html-beautify');
+const typograf = require('gulp-typograf');
 
 function errorHandler(errors) {
   console.warn("Error!");
@@ -31,9 +34,12 @@ function devServer(done) {
 }
 
 function buildPages() {
-  return src("source/index.html")
+  return src('source/index.twig')
     .pipe(plumber({ errorHandler }))
-    .pipe(dest("build/"));
+    .pipe(twig())
+    .pipe(typograf({locale: ['ru', 'en-US']}))
+    .pipe(htmlbeautify())
+    .pipe(dest('build/'));
 }
 
 function buildStyles() {
@@ -75,7 +81,7 @@ function buildScripts(done) {
 }
 
 function watchFiles() {
-  watch("source/index.html", buildPages);
+  watch("source/index.twig", buildPages);
   watch("source/scss/*.scss", buildStyles);
   watch("source/assets/**/*.*", buildAssets);
   watch("source/js/**/*.js", buildScripts);
