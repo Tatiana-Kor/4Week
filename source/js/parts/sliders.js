@@ -7,7 +7,7 @@ function initSliderTop() {
         vertical: true,
         customPaging : function(slider, i) {
             var targetImage = slider.$slides.eq(i).find('img').data("image");
-            return '<img src="'+targetImage+'" alt="Превью репродукций картин"/>';
+            return '<img src="'+targetImage+'" alt="Превью репродукций картин" role="tab"/>';
         },  
     });
 
