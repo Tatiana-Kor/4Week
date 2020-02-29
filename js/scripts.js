@@ -268,7 +268,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   function sourceJsIndexJs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
-    eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _parts_popups__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./parts/popups */ \"./source/js/parts/popups.js\");\n/* harmony import */ var _parts_sliders__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./parts/sliders */ \"./source/js/parts/sliders.js\");\n/* harmony import */ var _parts_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parts/form */ \"./source/js/parts/form.js\");\n/* harmony import */ var _parts_local__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./parts/local */ \"./source/js/parts/local.js\");\n/* harmony import */ var _parts_valid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./parts/valid */ \"./source/js/parts/valid.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n$(document).ready(() => {\r\n  Object(_parts_sliders__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n  Object(_parts_popups__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n  Object(_parts_local__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\r\n  Object(_parts_form__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\r\n  Object(_parts_valid__WEBPACK_IMPORTED_MODULE_4__[\"default\"])();\r\n});\n\n//# sourceURL=webpack:///./source/js/index.js?");
+    eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _parts_popups__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./parts/popups */ \"./source/js/parts/popups.js\");\n/* harmony import */ var _parts_sliders__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./parts/sliders */ \"./source/js/parts/sliders.js\");\n/* harmony import */ var _parts_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parts/form */ \"./source/js/parts/form.js\");\n/* harmony import */ var _parts_local__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./parts/local */ \"./source/js/parts/local.js\");\n/* harmony import */ var _parts_valid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./parts/valid */ \"./source/js/parts/valid.js\");\n/* harmony import */ var _parts_lazyload__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./parts/lazyload */ \"./source/js/parts/lazyload.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n$(document).ready(() => {\r\n  Object(_parts_sliders__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n  Object(_parts_lazyload__WEBPACK_IMPORTED_MODULE_5__[\"default\"])();\r\n  Object(_parts_popups__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n  Object(_parts_local__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\r\n  Object(_parts_form__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\r\n  Object(_parts_valid__WEBPACK_IMPORTED_MODULE_4__[\"default\"])();\r\n});\n\n//# sourceURL=webpack:///./source/js/index.js?");
     /***/
   },
 
@@ -285,6 +285,22 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     "use strict";
 
     eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return handleFormSubmit; });\nfunction handleFormSubmit() {\r\n\r\n    $('.js-form').on('submit', e => {\r\n        e.preventDefault();\r\n\r\n        const $form = $(e.target);\r\n\r\n        const params = {\r\n            formData: $form.serializeArray()\r\n        };\r\n\r\n        const callbackSuccess = () => {\r\n            $('.contact-us__form').addClass('contact-us__form--success');\r\n            $('.form-success').removeClass('hidden');\r\n        }\r\n\r\n        const callbackError = errors => {\r\n            console.group('Ошибка');\r\n            errors.forEach(error => {\r\n                console.log(`${ error.fieldName }: ${ error.message}`)\r\n            });\r\n            console.groupEnd();\r\n        };\r\n\r\n        window.API.onFormSubmit(params, callbackSuccess, callbackError)\r\n    });\r\n}\r\n\n\n//# sourceURL=webpack:///./source/js/parts/form.js?");
+    /***/
+  },
+
+  /***/
+  "./source/js/parts/lazyload.js":
+  /*!*************************************!*\
+    !*** ./source/js/parts/lazyload.js ***!
+    \*************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function sourceJsPartsLazyloadJs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return lazyLoad; });\nfunction lazyLoad() {\r\n\r\n    $('.js-lazy').each((index, el) => {\r\n        const $image = $(el);\r\n        const realSrc = $image.attr('data-srcset');\r\n    \r\n        $image.attr('srcset', realSrc);\r\n      });\r\n    \r\n}\n\n//# sourceURL=webpack:///./source/js/parts/lazyload.js?");
     /***/
   },
 
