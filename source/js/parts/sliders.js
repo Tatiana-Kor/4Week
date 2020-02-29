@@ -1,6 +1,7 @@
 function initSliderTop() {
 
     $('.js-slider-top').slick({
+        lazyLoad: 'ondemand',
         infinite: false,
         dots: true,
         vertical: true,
@@ -14,10 +15,9 @@ function initSliderTop() {
 
 function initSliderPopular() {
     $('.js-slider-popular').slick({
+        lazyLoad: 'progressive',
         slidesToShow: 3,
         slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 4000,
         variableWidth: true,
         centerPadding: '60px',
     });

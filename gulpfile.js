@@ -15,6 +15,7 @@ const ghPages = require("gulp-gh-pages");
 const twig = require('gulp-twig');
 const htmlbeautify = require('gulp-html-beautify');
 const typograf = require('gulp-typograf');
+const webp = require("gulp-webp");
 
 function errorHandler(errors) {
   console.warn("Error!");
@@ -57,6 +58,10 @@ function buildAssets(done) {
   src("source/assets/images/**/*.*")
     .pipe(imagemin())
     .pipe(dest("build/assets/images"));
+
+  src("source/assets/images/**/*.jpg")
+    .pipe(webp())
+    .pipe(dest("build/assets/images/"));
 
   done();
 }

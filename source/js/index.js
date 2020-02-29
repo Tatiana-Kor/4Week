@@ -5,8 +5,8 @@ import saveToLocalStorage from './parts/local';
 import validEmail from './parts/valid';
 
 $(document).ready(() => {
-  initPopups();
   initSliders();
+  initPopups();
   saveToLocalStorage();
   handleFormSubmit();
   validEmail();

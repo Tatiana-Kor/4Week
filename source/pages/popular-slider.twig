@@ -10,17 +10,22 @@
         { src: 'assets/images/slider-popular/03.jpg', alt:'Охотники на снегу, Питер Брейгель Старший', 
         shadow: '#2a96a0', name: 'Охотники на снегу, 1565', 
         author: 'Питер Брейгель Старший', description: '117 x 162см, холст', price: '2 400' },
-        { src: 'assets/images/slider-popular/04.jpg', alt:'Девочка на шаре, Пабло Пикассо', 
+        { datalazy: 'assets/images/slider-popular/04.jpg', alt:'Девочка на шаре, Пабло Пикассо', 
         shadow: '#738295', name: 'Девочка на шаре, 1905', 
         author: 'Пабло Пикассо', description: '147 x 95см, холст', price: '2 300' },
-        { src: 'assets/images/slider-popular/05.jpg', alt:'Звездная ночь, Винсент ван Гог', 
+        { datalazy: 'assets/images/slider-popular/05.jpg', alt:'Звездная ночь, Винсент ван Гог', 
         shadow: '#68acff', name: 'Звездная ночь, 1889', 
         author: 'Винсент ван Гог', description: '74 x 92см, холст', price: '1 300' },
     ] %} 
 
     {% for slide in popular__slider %}
         <div class="slider-popular__item" itemscope itemtype="https://schema.org/Offer">
-            <img class="slider-popular__image" itemprop="image" src="{{slide.src}}" alt="{{slide.alt}}" data-shadow="{{slide.shadow}}">
+             <img class="slider-popular__image js-lazy" 
+                    itemprop="image" 
+                    {% if slide.src %} src="{{slide.src}}"{% endif %}
+                    {% if slide.datalazy %} data-lazy="{{slide.datalazy}}"{% endif %}
+                    alt="{{slide.alt}}" 
+                    data-shadow="{{slide.shadow}}">
             <div class="slider-popular__description description">
                 <div class="slider-popular__history-creation description__history-creation" itemscope itemtype="https://schema.org/CreativeWork">
                     <span class="slider-populartop__name description__name" itemprop="name">{{slide.name}}</span>
