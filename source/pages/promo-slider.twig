@@ -1,13 +1,13 @@
  <div class="promo__slider js-slider-top" itemscope itemtype="https://schema.org/Offer">
         
     {% set promo__slider = [
-        { src: 'assets/images/slider-top/01', alt:'Явление Христа народу, Александр Иванов', 
+        { srcset: 'assets/images/slider-top/01', alt:'Явление Христа народу, Александр Иванов', 
         srcmin: 'assets/images/slider-top/01min.jpg', name: 'Явление Христа народу, 1857', 
         author: 'Александр Иванов', description: '140 x 750см, холст', price: '5 100' },
-        { src: 'assets/images/slider-top/02', alt:'Триумф Нептуна и Амфитриты, Никола Пуссен', 
+        { datasrcset: 'assets/images/slider-top/02', srcset: 'assets/images/placeholder', alt:'Триумф Нептуна и Амфитриты, Никола Пуссен', 
         srcmin: 'assets/images/slider-top/02min.jpg', name: 'Триумф Нептуна и Амфитриты, 1637', 
         author: 'Никола Пуссен', description: '115 x 53см, холст', price: '3 100' }, 
-        { src: 'assets/images/slider-top/03', alt:'Шестикрылый Серафим, Михаил Врубель', 
+        { datasrcset: 'assets/images/slider-top/03', srcset: 'assets/images/placeholder', alt:'Шестикрылый Серафим, Михаил Врубель', 
         srcmin: 'assets/images/slider-top/03min.jpg', name: 'Шестикрылый Серафим, 1904', 
         author: 'Михаил Врубель', description: '131 x 155см, холст', price: '4 100' },
     ] %}
@@ -16,11 +16,17 @@
         <div class="slider-top__item">
             
             <picture>
-                <source srcset="{{slide.src}}.webp" type="image/webp">
-                <source srcset="{{slide.src}}.jpg" type="image/jpeg">
+                <source class="js-lazy" 
+                        srcset="{{slide.srcset}}.webp" 
+                        {% if slide.datasrcset %} data-srcset="{{slide.datasrcset}}.webp" {% endif %}
+                        data-srcset="{{slide.srcset}}.webp" type="image/webp">
+                <source class="js-lazy" 
+                        srcset="{{slide.srcset}}.jpg"
+                        {% if slide.datasrcset %} data-srcset="{{slide.datasrcset}}.jpg" {% endif %}
+                        data-srcset="{{slide.srcset}}.jpg" type="image/jpeg">
                 <img class="slider-top__image" itemprop="image" src="#" alt="{{slide.alt}}" width="700" height="467" data-image="{{slide.srcmin}}">
             </picture>
-            
+
             <div class="slider-top__description description">
                 <div class="slider-top__history-creation description__history-creation" itemscope itemtype="https://schema.org/CreativeWork">
                     <span class="slider-top__name description__name" itemprop="name">{{slide.name}}</span>
