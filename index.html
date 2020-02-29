@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="assets/fonts/roboto-v20-cyrillic_latin-regular.woff2" as="font" crossorigin>
     <link rel="stylesheet" href="styles/style.css">
     <title>Document</title>
 </head>
@@ -29,7 +30,13 @@
             <div class="promo__slider js-slider-top" itemscope itemtype="https://schema.org/Offer">
 
                 <div class="slider-top__item">
-                    <img class="slider-top__image" itemprop="image" src="assets/images/slider-top/01.jpg" alt="Явление Христа народу, Александр Иванов" width="700" height="467" data-image="assets/images/slider-top/01min.jpg">
+
+                    <picture>
+                        <source srcset="assets/images/slider-top/01.webp" type="image/webp">
+                        <source srcset="assets/images/slider-top/01.jpg" type="image/jpeg">
+                        <img class="slider-top__image" itemprop="image" src="#" alt="Явление Христа народу, Александр Иванов" width="700" height="467" data-image="assets/images/slider-top/01min.jpg">
+                    </picture>
+
                     <div class="slider-top__description description">
                         <div class="slider-top__history-creation description__history-creation" itemscope itemtype="https://schema.org/CreativeWork">
                             <span class="slider-top__name description__name" itemprop="name">Явление Христа народу, 1857</span>
@@ -43,7 +50,13 @@
                 </div>
 
                 <div class="slider-top__item">
-                    <img class="slider-top__image" itemprop="image" src="assets/images/slider-top/02.jpg" alt="Триумф Нептуна и Амфитриты, Никола Пуссен" width="700" height="467" data-image="assets/images/slider-top/02min.jpg">
+
+                    <picture>
+                        <source srcset="assets/images/slider-top/02.webp" type="image/webp">
+                        <source srcset="assets/images/slider-top/02.jpg" type="image/jpeg">
+                        <img class="slider-top__image" itemprop="image" src="#" alt="Триумф Нептуна и Амфитриты, Никола Пуссен" width="700" height="467" data-image="assets/images/slider-top/02min.jpg">
+                    </picture>
+
                     <div class="slider-top__description description">
                         <div class="slider-top__history-creation description__history-creation" itemscope itemtype="https://schema.org/CreativeWork">
                             <span class="slider-top__name description__name" itemprop="name">Триумф Нептуна и Амфитриты, 1637</span>
@@ -57,7 +70,13 @@
                 </div>
 
                 <div class="slider-top__item">
-                    <img class="slider-top__image" itemprop="image" src="assets/images/slider-top/03.jpg" alt="Шестикрылый Серафим, Михаил Врубель" width="700" height="467" data-image="assets/images/slider-top/03min.jpg">
+
+                    <picture>
+                        <source srcset="assets/images/slider-top/03.webp" type="image/webp">
+                        <source srcset="assets/images/slider-top/03.jpg" type="image/jpeg">
+                        <img class="slider-top__image" itemprop="image" src="#" alt="Шестикрылый Серафим, Михаил Врубель" width="700" height="467" data-image="assets/images/slider-top/03min.jpg">
+                    </picture>
+
                     <div class="slider-top__description description">
                         <div class="slider-top__history-creation description__history-creation" itemscope itemtype="https://schema.org/CreativeWork">
                             <span class="slider-top__name description__name" itemprop="name">Шестикрылый Серафим, 1904</span>
@@ -86,7 +105,7 @@
             <div class="popular__slider js-slider-popular">
 
                 <div class="slider-popular__item" itemscope itemtype="https://schema.org/Offer">
-                    <img class="slider-popular__image" itemprop="image" src="assets/images/slider-popular/01.jpg" alt="Девушка с жемчужной серёжкой, Ян Вермеер" data-shadow="#000767">
+                    <img class="slider-popular__image js-lazy" itemprop="image" src="assets/images/slider-popular/01.jpg" alt="Девушка с жемчужной серёжкой, Ян Вермеер" data-shadow="#000767">
                     <div class="slider-popular__description description">
                         <div class="slider-popular__history-creation description__history-creation" itemscope itemtype="https://schema.org/CreativeWork">
                             <span class="slider-populartop__name description__name" itemprop="name">Девушка с жемчужной серёжкой, 1665</span>
@@ -100,7 +119,7 @@
                 </div>
 
                 <div class="slider-popular__item" itemscope itemtype="https://schema.org/Offer">
-                    <img class="slider-popular__image" itemprop="image" src="assets/images/slider-popular/02.jpg" alt="Бонапарт на перевале Сен-Бернар, Жак-Луи Давид" data-shadow="#980a1b">
+                    <img class="slider-popular__image js-lazy" itemprop="image" src="assets/images/slider-popular/02.jpg" alt="Бонапарт на перевале Сен-Бернар, Жак-Луи Давид" data-shadow="#980a1b">
                     <div class="slider-popular__description description">
                         <div class="slider-popular__history-creation description__history-creation" itemscope itemtype="https://schema.org/CreativeWork">
                             <span class="slider-populartop__name description__name" itemprop="name">Бонапарт на перевале Сен-Бернар, 1801</span>
@@ -114,7 +133,7 @@
                 </div>
 
                 <div class="slider-popular__item" itemscope itemtype="https://schema.org/Offer">
-                    <img class="slider-popular__image" itemprop="image" src="assets/images/slider-popular/03.jpg" alt="Охотники на снегу, Питер Брейгель Старший" data-shadow="#2a96a0">
+                    <img class="slider-popular__image js-lazy" itemprop="image" src="assets/images/slider-popular/03.jpg" alt="Охотники на снегу, Питер Брейгель Старший" data-shadow="#2a96a0">
                     <div class="slider-popular__description description">
                         <div class="slider-popular__history-creation description__history-creation" itemscope itemtype="https://schema.org/CreativeWork">
                             <span class="slider-populartop__name description__name" itemprop="name">Охотники на снегу, 1565</span>
@@ -128,7 +147,7 @@
                 </div>
 
                 <div class="slider-popular__item" itemscope itemtype="https://schema.org/Offer">
-                    <img class="slider-popular__image" itemprop="image" src="assets/images/slider-popular/04.jpg" alt="Девочка на шаре, Пабло Пикассо" data-shadow="#738295">
+                    <img class="slider-popular__image js-lazy" itemprop="image" data-lazy="assets/images/slider-popular/04.jpg" alt="Девочка на шаре, Пабло Пикассо" data-shadow="#738295">
                     <div class="slider-popular__description description">
                         <div class="slider-popular__history-creation description__history-creation" itemscope itemtype="https://schema.org/CreativeWork">
                             <span class="slider-populartop__name description__name" itemprop="name">Девочка на шаре, 1905</span>
@@ -142,7 +161,7 @@
                 </div>
 
                 <div class="slider-popular__item" itemscope itemtype="https://schema.org/Offer">
-                    <img class="slider-popular__image" itemprop="image" src="assets/images/slider-popular/05.jpg" alt="Звездная ночь, Винсент ван Гог" data-shadow="#68acff">
+                    <img class="slider-popular__image js-lazy" itemprop="image" data-lazy="assets/images/slider-popular/05.jpg" alt="Звездная ночь, Винсент ван Гог" data-shadow="#68acff">
                     <div class="slider-popular__description description">
                         <div class="slider-popular__history-creation description__history-creation" itemscope itemtype="https://schema.org/CreativeWork">
                             <span class="slider-populartop__name description__name" itemprop="name">Звездная ночь, 1889</span>
@@ -226,5 +245,6 @@
     <script src="js/slick.min.js"></script>
     <script src="js/popup.js"></script>
     <script src="js/scripts.js"></script>
+</body>
 
 </html>
